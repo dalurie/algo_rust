@@ -16,7 +16,6 @@ fn quicksort<T: Clone + PartialOrd>(x: &Vec<T>) -> Vec<T> {
     } else if x.len() == 1 {
         vec![x[0].clone()]
     } else {
-        let ans = [quicksort(&smaller), quicksort(&equal), quicksort(&greater)].concat();
-        ans
+        [quicksort(&smaller), quicksort(&equal), quicksort(&greater)].concat()
     }
 }
